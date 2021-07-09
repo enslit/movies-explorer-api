@@ -24,4 +24,4 @@ DB_NAME | Любая строка | bitfilmsdb | Название базы да�
 
 ## Ссылки
 - api.enslit-movies.nomoredomains.club
-- [Swagger](https://app.swaggerhub.com/apis/enslit/MoviesExplorer/1.0.0)
+- [Swagger](https://app.swaggerhub.com/apis-docs/enslit/MoviesExplorer/1.0.0)
