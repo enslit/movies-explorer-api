@@ -1,4 +1,4 @@
-import { TIME_MS } from './constants';
+const { TIME_MS } = require('./constants');
 
 const rateLimit = require('express-rate-limit');
 

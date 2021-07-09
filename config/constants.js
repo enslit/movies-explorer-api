@@ -5,7 +5,7 @@ const DAY = 24 * HOUR;
 const WEEK = 7 * DAY;
 const MONTH = 30 * DAY;
 
-export const TIME_MS = {
+module.exports.TIME_MS = {
   second: SECOND,
   minute: MINUTE,
   hour: HOUR,
