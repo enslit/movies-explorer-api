@@ -5,7 +5,7 @@ const {
   loginValidator,
   registerValidator,
   logoutValidator,
-} = require('../middlewares/validators/index');
+} = require('../middlewares/validators');
 
 const router = Router();
 

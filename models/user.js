@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt');
 const { Schema, model } = require('mongoose');
 const Movie = require('./movie');
-const { isEmail } = require('../utils/regExpValidators');
+const { emailRegExp } = require('../utils/regExp');
 
 const UnauthorizedError = require('../utils/httpErrors/UnauthorizedError');
 
@@ -11,7 +11,9 @@ const userSchema = new Schema({
     required: true,
     unique: true,
     validate: {
-      validator: isEmail,
+      validator: function(v) {
+        return emailRegExp.test(v);
+      },
       message: 'Не корректный email',
     },
   },
