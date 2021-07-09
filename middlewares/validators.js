@@ -1,5 +1,10 @@
-const { urlRegExp, linkImageRegExp, textRuRegExp, textEnRegExp } = require('../utils/regExp');
 const { celebrate, Segments, Joi } = require('celebrate');
+const {
+  urlRegExp,
+  linkImageRegExp,
+  textRuRegExp,
+  textEnRegExp,
+} = require('../utils/regExp');
 
 module.exports.loginValidator = celebrate(
   {
@@ -22,17 +27,8 @@ module.exports.registerValidator = celebrate(
   { abortEarly: false }
 );
 
-module.exports.logoutValidator = celebrate({
-  [Segments.COOKIES]: Joi.object({
-    jwt: Joi.string().required(),
-  }),
-});
-
 module.exports.updateUserInfoValidator = celebrate(
   {
-    [Segments.COOKIES]: Joi.object({
-      jwt: Joi.string().required(),
-    }),
     [Segments.BODY]: Joi.object().keys({
       email: Joi.string().email().required(),
       name: Joi.string().min(2).max(30).required(),
@@ -43,9 +39,6 @@ module.exports.updateUserInfoValidator = celebrate(
 
 module.exports.saveMovieValidator = celebrate(
   {
-    [Segments.COOKIES]: Joi.object({
-      jwt: Joi.string().required(),
-    }),
     [Segments.BODY]: Joi.object().keys({
       country: Joi.string().required(),
       director: Joi.string().required(),
@@ -59,14 +52,12 @@ module.exports.saveMovieValidator = celebrate(
       nameRU: Joi.string().required().regex(textRuRegExp),
       nameEN: Joi.string().required().regex(textEnRegExp),
     }),
-  }, { abortEarly: false }
+  },
+  { abortEarly: false }
 );
 
 module.exports.deleteMovieValidator = celebrate({
-  [Segments.COOKIES]: Joi.object({
-    jwt: Joi.string().required(),
-  }),
   [Segments.PARAMS]: Joi.object({
-    movieId: Joi.string().required().length(24).hex()
-  })
-})
+    movieId: Joi.string().required().length(24).hex(),
+  }),
+});
