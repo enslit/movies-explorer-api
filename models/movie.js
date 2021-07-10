@@ -1,5 +1,10 @@
 const { Schema, model, Types } = require('mongoose');
-const { urlRegExp, linkImageRegExp, textEnRegExp, textRuRegExp } = require('../utils/regExp');
+const {
+  urlRegExp,
+  linkImageRegExp,
+  textEnRegExp,
+  textRuRegExp,
+} = require('../utils/regExp');
 
 const movieSchema = new Schema({
   owner: { type: Types.ObjectId, ref: 'User', required: true },
@@ -13,7 +18,7 @@ const movieSchema = new Schema({
     type: String,
     required: true,
     validate: {
-      validator: function(v) {
+      validator: function (v) {
         return linkImageRegExp.test(v);
       },
       message: 'Не корректная ссылка на изображение',
@@ -23,7 +28,7 @@ const movieSchema = new Schema({
     type: String,
     required: true,
     validate: {
-      validator: function(v) {
+      validator: function (v) {
         return urlRegExp.test(v);
       },
       message: 'Не корректная ссылка на трейлер',
@@ -33,7 +38,7 @@ const movieSchema = new Schema({
     type: String,
     required: true,
     validate: {
-      validator: function(v) {
+      validator: function (v) {
         return urlRegExp.test(v);
       },
       message: 'Не корректная ссылка на изображение',
@@ -43,7 +48,7 @@ const movieSchema = new Schema({
     type: String,
     required: true,
     validate: {
-      validator: function(v) {
+      validator: function (v) {
         return textRuRegExp.test(v);
       },
       message: 'Название должно быть написано кириллицей',
@@ -53,7 +58,7 @@ const movieSchema = new Schema({
     type: String,
     required: true,
     validate: {
-      validator: function(v) {
+      validator: function (v) {
         return textEnRegExp.test(v);
       },
       message: 'Название должно быть написано латиницей',

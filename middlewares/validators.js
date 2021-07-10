@@ -43,7 +43,7 @@ module.exports.saveMovieValidator = celebrate(
       country: Joi.string().required(),
       director: Joi.string().required(),
       duration: Joi.number().required(),
-      year: Joi.number().required(),
+      year: Joi.string().min(4).max(4).required(),
       description: Joi.string().required(),
       image: Joi.string().required().regex(linkImageRegExp),
       thumbnail: Joi.string().required().regex(linkImageRegExp),
