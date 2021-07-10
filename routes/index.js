@@ -4,14 +4,13 @@ const auth = require('../middlewares/auth');
 const {
   loginValidator,
   registerValidator,
-  logoutValidator,
 } = require('../middlewares/validators');
 
 const router = Router();
 
 router.post('/signin', loginValidator, login);
 router.post('/signup', registerValidator, register);
-router.post('/signout', logoutValidator, logout);
+router.post('/signout', logout);
 
 router.use(auth);
 
