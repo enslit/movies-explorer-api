@@ -34,11 +34,11 @@ const updateUser = (req, res, next) => {
 const login = (req, res, next) =>
   User.findUserByCredentials(req.body.email, req.body.password)
     .then(({ _id }) => {
-      const JWT_SECRET =
+      const JWT_SECRET_TOKEN =
         process.env.NODE_ENV !== 'production'
           ? 'dev-key'
-          : process.env.JWT_SECRET;
-      const token = jwt.sign({ _id }, JWT_SECRET, {
+          : process.env.JWT_SECRET_TOKEN;
+      const token = jwt.sign({ _id }, JWT_SECRET_TOKEN, {
         expiresIn: '7d',
       });
 
