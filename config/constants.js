@@ -15,8 +15,8 @@ const TIME_MS = {
 };
 
 const DEFAULT_DB_NAME = 'bitfilmsdb';
-const DEFAULT_DB_PORT = 'localhost';
-const DEFAULT_DB_HOST = '27017';
+const DEFAULT_DB_PORT = '27017';
+const DEFAULT_DB_HOST = 'localhost';
 
 module.exports = {
   TIME_MS,
