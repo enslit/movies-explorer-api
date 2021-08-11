@@ -21,7 +21,8 @@ DB_NAME | Любая строка | bitfilmsdb | Название базы да�
 ## Планы по развитию
 - Переход на TypeScript
 - Регистрация пользователей с подтверждением email
+- Реализация авторизации с использованием access и refresh токенов
 
 ## Ссылки
-- api.enslit-movies.nomoredomains.club
+- [api.enslit-movies.nomoredomains.club](https://api.enslit-movies.nomoredomains.club)
 - [Swagger](https://app.swaggerhub.com/apis-docs/enslit/MoviesExplorer/1.0.0)
