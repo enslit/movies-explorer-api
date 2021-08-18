@@ -1,10 +1,5 @@
 const { celebrate, Segments, Joi } = require('celebrate');
-const {
-  urlRegExp,
-  linkImageRegExp,
-  textRuRegExp,
-  textEnRegExp,
-} = require('../utils/regExp');
+const { urlRegExp, linkImageRegExp } = require('../utils/regExp');
 
 module.exports.loginValidator = celebrate(
   {
@@ -49,8 +44,8 @@ module.exports.saveMovieValidator = celebrate(
       thumbnail: Joi.string().required().regex(linkImageRegExp),
       trailer: Joi.string().required().regex(urlRegExp),
       movieId: Joi.number().required(),
-      nameRU: Joi.string().required().regex(textRuRegExp),
-      nameEN: Joi.string().required().regex(textEnRegExp),
+      nameRU: Joi.string().required(),
+      nameEN: Joi.string().required(),
     }),
   },
   { abortEarly: false }
